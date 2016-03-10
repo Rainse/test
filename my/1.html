@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+    <div id="example2"></div>
+    <div class="example3"></div>
+    
+    <div id="demo2"></div>
+
+    <script type="text/babel">
+      ReactDOM.render(
+        <h2>Rainse,here!</h2>,
+        document.getElementById('example')
+      );
+      var names=['1','2','4'];
+      ReactDOM.render(
+        <div>
+        {
+            names.map(function(name){
+                return<div>{name}</div>
+            }
+            )
+        }
+        </div>,
+        document.getElementById('demo2')
+      );
+      
+  
+      var HelloMessage = React.createClass({
+          render: function(){
+//              alert('dddd');
+              return <p>{this.props.name}</p>;
+          }
+      });
+
+      ReactDOM.render(
+          <HelloMessage name = "Rainse"/>,
+          document.getElementsByClassName('example3')[0]
+      );
+      
+
+
+    </script>
+  </body>
+</html>
